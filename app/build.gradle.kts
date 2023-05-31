@@ -1,10 +1,10 @@
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
+    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.kotlinAndroid)
 }
 
 android {
-    namespace 'com.kerriganlove.plitch'
+    namespace = "com.kerriganlove.plitch"
     compileSdk 32
 
     defaultConfig {

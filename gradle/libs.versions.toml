@@ -1,0 +1,13 @@
+[plugins]
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm" , version.ref = "kotlin" }
+kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
+androidLibrary = { id = "com.android.library", version.ref = "gradle" }
+androidApplication = { id = "com.android.application", version.ref = "gradle"}
+
+[versions]
+kotlin = "1.8.10"
+gradle = "8.0.0"
+
+[libraries]
+
+[bundles]
