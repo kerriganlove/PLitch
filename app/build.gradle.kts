@@ -1,18 +1,15 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    id("plitch.android.application")
+    id("plitch.android.compose")
 }
 
 android {
     namespace = "com.kerriganlove.plitch"
-    compileSdk = 32
 
     defaultConfig {
         applicationId = "com.kerriganlove.plitch"
-        minSdk = 28
-        targetSdk = 32
-        versionCode =  1
-        versionName = "1.0"
+        versionCode = 100
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -22,13 +19,6 @@ android {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 

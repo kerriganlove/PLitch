@@ -1,4 +1,5 @@
 [plugins]
+
 kotlinJvm = { id = "org.jetbrains.kotlin.jvm" , version.ref = "kotlin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
 androidLibrary = { id = "com.android.library", version.ref = "gradle" }
@@ -7,9 +8,27 @@ androidApplication = { id = "com.android.application", version.ref = "gradle"}
 [versions]
 kotlin = "1.8.10"
 gradle = "8.0.2"
+composeCompiler = "1.4.2"
+composeBom = "2023.01.00"
+ktor = "2.3.1"
+
 
 [libraries]
+
+# module-level plugin
 androidGradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "gradle" }
 kotlinGradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+# android Compose
+androidxComposeBom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom"}
+androidxComposeFoundation = { group = "androidx.compose.foundation", name = "foundation"}
+androidxComposeUiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidxComposeUiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
+androidxComposeUiUtil = { group = "androidx.compose.ui", name = "ui-util"}
+ktorClientCore = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor"}
+ktorClientOkHttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor"}
+ktorClientJsonSerialization = { group = "io.ktor", name = "ktor-client-serialization-kotlinx-json", version.ref = "ktor"}
+
+
 
 [bundles]

@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        includeBuild("build-convention")
         gradlePluginPortal()
         google()
         mavenCentral()
@@ -15,4 +16,3 @@ dependencyResolutionManagement {
 rootProject.name = "PLitch"
 include(":app")
 include(":data")
-include(":build_convention")
