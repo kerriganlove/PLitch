@@ -45,21 +45,20 @@ internal fun Project.setAndroidCompose() {
         composeOptions {
             kotlinCompilerExtensionVersion = libs.findVersion("composeCompiler").get().toString()
         }
-        // Compose 재료명세서를 통한 버전 관리
-        dependencies {
-            val bom = platform(libs.findLibrary("androidxComposeBom").get())
-            // Bill of Materials(재료명세서) 설정
-            implementation(bom)
-            androidTestImplementation(bom)
-
-            // Compose Default Implementation
-            implementation(libs.findLibrary("androidxComposeUiTooling"))
-            implementation(libs.findLibrary("androidxComposeUiToolingPreview"))
-            implementation(libs.findLibrary("androidxComposeUiUtil"))
+        kotlinOptions {
+            freeCompilerArgs = freeCompilerArgs + buildComposeMetricsParameters()
         }
+    }
+    // Compose 재료명세서를 통한 버전 관리
+    dependencies {
+        val bom = platform(libs.findLibrary("androidxComposeBom").get())
+        // Bill of Materials(재료명세서) 설정
+        implementation(bom)
+        androidTestImplementation(bom)
     }
 }
 
+// TODO 해석해봐야 함.
 private fun Project.buildComposeMetricsParameters(): List<String> {
     val metricParameters = mutableListOf<String>()
     val enableMetricsProvider = project.providers.gradleProperty("enableComposeCompilerMetrics")

@@ -4,13 +4,16 @@ kotlinJvm = { id = "org.jetbrains.kotlin.jvm" , version.ref = "kotlin" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin"}
 androidLibrary = { id = "com.android.library", version.ref = "gradle" }
 androidApplication = { id = "com.android.application", version.ref = "gradle"}
+androidHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}
 
 [versions]
-kotlin = "1.8.10"
+kotlin = "1.8.20"
 gradle = "8.0.2"
-composeCompiler = "1.4.2"
+composeCompiler = "1.4.5"
 composeBom = "2023.01.00"
 ktor = "2.3.1"
+hilt = "2.44"
 
 
 [libraries]
@@ -25,10 +28,15 @@ androidxComposeFoundation = { group = "androidx.compose.foundation", name = "fou
 androidxComposeUiTooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidxComposeUiToolingPreview = { group = "androidx.compose.ui", name = "ui-tooling-preview"}
 androidxComposeUiUtil = { group = "androidx.compose.ui", name = "ui-util"}
+
+# Network
 ktorClientCore = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor"}
 ktorClientOkHttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor"}
-ktorClientJsonSerialization = { group = "io.ktor", name = "ktor-client-serialization-kotlinx-json", version.ref = "ktor"}
+ktorClientJsonSerialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor"}
 
+# Dependency Injection
+hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hiltAndroidCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
 
 
 [bundles]

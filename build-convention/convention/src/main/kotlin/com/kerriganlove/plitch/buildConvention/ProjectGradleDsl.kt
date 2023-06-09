@@ -21,3 +21,9 @@ internal fun DependencyHandlerScope.androidTestImplementation(
 ) {
     add("androidTestImplementation", artifact)
 }
+
+internal fun DependencyHandlerScope.kapt(
+    artifact : Any
+) {
+    add("kapt",artifact)
+}

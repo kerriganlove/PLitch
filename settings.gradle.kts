@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "PLitch"
 include(":app")
-include(":data")
+include(":core:data")
+include(":core:network")

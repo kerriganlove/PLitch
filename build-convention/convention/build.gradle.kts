@@ -36,5 +36,9 @@ gradlePlugin {
             id = "plitch.kotlin.serialization"
             implementationClass = "KotlinSerializationConventionPlugin"
         }
+        register("androidHilt") {
+            id = "plitch.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }

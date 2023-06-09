@@ -8,9 +8,9 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 internal fun Project.setKtorClient() {
     dependencies {
-        implementation(libs.findLibrary("ktorClientCore"))
-        implementation(libs.findLibrary("ktorClientOkHttp"))
-        implementation(libs.findLibrary("ktorClientJsonSerialization"))
+        implementation(libs.findLibrary("ktorClientCore").get())
+        implementation(libs.findLibrary("ktorClientOkHttp").get())
+        implementation(libs.findLibrary("ktorClientJsonSerialization").get())
     }
 }
 
