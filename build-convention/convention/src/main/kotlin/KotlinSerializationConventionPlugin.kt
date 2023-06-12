@@ -10,7 +10,7 @@ class KotlinSerializationConventionPlugin : Plugin<Project> {
                 apply("org.jetbrains.kotlin.plugin.serialization")
             }
             extensions.configure<ApplicationExtension> {
-                setKtorClient()
+                setAndroidKtorClient()
             }
         }
     }

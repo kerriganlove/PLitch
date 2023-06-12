@@ -7,4 +7,7 @@ plugins {
 android {
     namespace = "com.kerriganlove.core.network"
 
+    buildFeatures {
+        buildConfig = true
+    }
 }

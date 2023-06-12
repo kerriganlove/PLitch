@@ -6,11 +6,13 @@ import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
-internal fun Project.setKtorClient() {
+internal fun Project.setAndroidKtorClient() {
     dependencies {
+        // Kotlin/JVM - Android...?
         implementation(libs.findLibrary("ktorClientCore").get())
         implementation(libs.findLibrary("ktorClientOkHttp").get())
         implementation(libs.findLibrary("ktorClientJsonSerialization").get())
+        implementation(libs.findLibrary("ktorClientOkHttpLoggingInterceptor").get())
     }
 }
 
