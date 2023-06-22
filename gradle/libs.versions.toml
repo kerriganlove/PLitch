@@ -34,6 +34,7 @@ androidxComposeUiUtil = { group = "androidx.compose.ui", name = "ui-util"}
 ktorClientCore = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor"}
 ktorClientOkHttp = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktor"}
 ktorClientJsonSerialization = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor"}
+ktorClientContentNegotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor"}
 ktorClientOkHttpLoggingInterceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp"}
 
 # Dependency Injection

@@ -13,6 +13,7 @@ internal fun Project.setAndroidKtorClient() {
         implementation(libs.findLibrary("ktorClientOkHttp").get())
         implementation(libs.findLibrary("ktorClientJsonSerialization").get())
         implementation(libs.findLibrary("ktorClientOkHttpLoggingInterceptor").get())
+        implementation(libs.findLibrary("ktorClientContentNegotiation").get())
     }
 }
 

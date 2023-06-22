@@ -1,7 +1,12 @@
+import java.util.*
+
 plugins {
     id("plitch.android.application")
     id("plitch.android.compose")
 }
+
+val properties = Properties()
+properties.load(project.rootProject.file("local.properties").inputStream())
 
 android {
     namespace = "com.kerriganlove.plitch"
@@ -12,6 +17,11 @@ android {
         versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "LAST_FM_API_KEY", properties["last_fm_api_key"] as String)
+    }
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {

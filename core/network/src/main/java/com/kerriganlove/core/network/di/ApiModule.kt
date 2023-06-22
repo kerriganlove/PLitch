@@ -7,6 +7,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.ktor.client.*
 import io.ktor.client.engine.okhttp.OkHttp
+import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.serialization.kotlinx.json.json
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Singleton
@@ -17,17 +19,21 @@ object ApiModule {
 
     @Provides
     @Singleton
-    fun provideHttpClient (
+    fun provideSongHttpClient (
         okHttpClient : OkHttpClient
-    ) : HttpClient{
+    ) : HttpClient {
         val httpClient = HttpClient(OkHttp) {
             engine {
+                preconfigured = okHttpClient
+                clientCacheSize = 100
                 config {
 
                 }
             }
+            install(ContentNegotiation) {
+                json()
+            }
         }
-
         return httpClient
     }
 

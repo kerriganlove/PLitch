@@ -1,4 +1,5 @@
 package com.kerriganlove.core.network
 
-class SongService {
+interface SongService {
+    suspend fun getTopSongs() : List<SongsResponse>
 }
